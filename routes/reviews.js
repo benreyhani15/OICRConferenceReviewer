@@ -8,12 +8,6 @@ router.get('/new', function(req, res) {
   res.render('new_review');
 });
 
-router.get('/',function(req,res){
-	Review.find(function(err,reviews){
-		res.send(reviews);
-	});
-});
-
 router.post('/addReview', function(req,res){
 	var date = req.body.date;
 	var conferenceMonth = date.substring(date.lastIndexOf("-"),date.length - 1);
