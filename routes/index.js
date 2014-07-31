@@ -4,6 +4,6 @@ var Report = require('../models/conference_review');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'OICR Conferences'});
 });
 module.exports = router;
