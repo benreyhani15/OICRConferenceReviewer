@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .row
+    table
+      tr
+        td(rowspan="2")
+          img.img-responsive(src="/images/OICRlogo_general_use.jpg" style="margin-right:20px", width="100%", height="100%")
+        td
+          h1.text-center(style="color: rgb(57, 121, 59); vertical-align:middle;") Conference Reviews
+        td(rowspan="2")
+          img.img-responsive(src="/images/OICRlogo_general_use.jpg", style=" visibility: hidden;", width="100%", height="100%")
+      tr
+        td(style="padding-left:20px")
+          p.text-left Attending a conference is a professionally rewarding experience. The two main reasons to attend a conference are to hear presentations and to converse with other researchers. We often fail to share this invaluable experience with our work colleagues. This website aims to provide insights into all conferences your colleagues have attended. 
+          p.text-center If you had attended a conference recently, please give us some feedback!
+  br
+  br
+  br
+  br
+  br
+  br
+  a.btn.btn-primary.btn-lg.active(href="/potato") Review A Conference!
