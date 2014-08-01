@@ -12,9 +12,18 @@ block content
           img.img-responsive(src="/images/OICRlogo_general_use.jpg", style=" visibility: hidden;", width="100%", height="100%")
       tr
         td(style="padding-left:20px")
-          p.text-left Attending a conference is a professionally rewarding experience. The two main reasons to attend a conference are to hear presentations and to converse with other researchers. We often fail to share this invaluable experience with our work colleagues. This website aims to provide insights into all conferences your colleagues have attended. 
+          p.text-left Attending a conference is a professionally rewarding experience. The two main reasons to attend a conference are to hear presentations and to converse with other researchers. We often fail to share this invaluable experience with our work colleagues. This website aims to provide insights into all conferences your colleagues have attended.
           p.text-center If you had attended a conference recently, please give us some feedback!
   br
   br
   .centerDiv
-    a.btn.btn-primary.btn-lg.active(href="/potato") Review A Conference!
+    a.btn.btn-primary.btn-lg.active(href="/review/new") Review A Conference!
+  br
+  h3 Past Conferences
+  .container
+    .row
+      .col-xs-3
+        for year in years
+          a(href="##{year}")
+            h3(style="color:green") #{year}
+      .col-xs-9(style="margin-top:13px")
