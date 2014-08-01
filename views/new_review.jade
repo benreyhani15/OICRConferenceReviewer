@@ -3,48 +3,98 @@ extends layout
 block content
   .newConference
     .header
-      h3 New Conference Review
-      p Reinstalling a formal process around conference attendance and follow up reporting.
-    .form-body
+      h3(style="color: rgb(57, 121, 59);") New Conference Review
+      br
+     .form-body
       form(name="addReview", method="post", action="/review/addReview")
         .form-group
-          label(for="attendee") Conference Attendee:
-          input.form-control(type="text", id="attendee", placeholder="Full Name",name="attendee",required)
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="attendee") Conference Attendee:
+              td(style="width:80%")
+                input.form-control(type="text", id="attendee", placeholder="Full Name",name="attendee",required)
+
         .form-group
-          label(for="department") Conference Attendee Department:
-          input.form-control(type="text", id="department", placeholder="OICR Department",name="department")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="department") Conference Attendee Department:
+              td(style="width:80%")
+                input.form-control(type="text", id="department", placeholder="OICR Department",name="department")
+
         .form-group
-          label(for="conference") Conference Name:
-          input.form-control(type="text", id="conference", name="conference",required)
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="conference") Conference Name:
+              td(style="width:80%")
+                input.form-control(type="text", id="conference", name="conference",required, placeholder="Name")
+
         .form-group
-          label(for="date") Conference Date (MM-YYYY):
-          input.form-control(type="month",id="date",name="date",required)
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="date") Conference Date:
+              td(style="width:80%")
+                input.form-control(type="month",id="date",name="date",required, placeholder="MM-YYYY")
+
         .form-group
-          label(for="city") City:
-          input.form-control(type="text",id="city",name="city")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="city") City:
+              td(style="width:80%")
+                input.form-control(type="text",id="city",name="city", placeholder="e.g. Toronto, Canada")
+
         .form-group
-          label(for="duration") Duration:
-          input.form-control(type="number", id="duration",name="duration",placeholder="Please specify the number of days")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="duration") Duration:
+              td(style="width:80%")
+                input.form-control(type="number", id="duration",name="duration",placeholder="Please specify the number of days")
+
         .form-group
-          label(for="focus") Area of Focus:
-          input.form-control(type="text", id="focus",name="area_of_focus")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                label(for="focus") Area of Focus:
+              td(style="width:80%")
+                input.form-control(type="text", id="focus",name="area_of_focus")
+
         .form-group
           label Would you recommend this conference to your colleagues?
           label.radio-inline Yes
           input(type="radio",name="recommendradio",id="recommendYes",value="true")
           label.radio-inline No
           input(type="radio",name="recommendradio",id="recommendNo",value="false")
+
         h5
-          b Please justify:
-        textarea(name="justification",rows="4", cols="80",id="justification")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                b Please justify:
+              td(style="width:80%")
+                textarea(name="justification",rows="4", cols="80",id="justification")
         h5
-          b Summary:
-        textarea(name="mSummary",rows="6", cols="80",id="summary", placeholder="Please provide a summary of key learnings ")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                b Summary:
+              td(style="width:80%")
+                textarea(name="mSummary",rows="6", cols="80",id="summary", placeholder="Please provide a summary of key learnings ")
+
         h5
-          b Possible Collaborators/Client Contacts:
-        textarea(name="collaborators",rows="4", cols="80",id="contacts",placeholder="Please note any client contacts made at the event here")
+          table(style="width:100%")
+            tr
+              td(style="width:15%")
+                b Possible Collaborators/Client Contacts:
+              td(style="width:80%")
+                textarea(name="collaborators",rows="4", cols="80",id="contacts",placeholder="Please note any client contacts made at the event here")
+
         .form-group
-          label(for="rating") How do you rate the conference?
+          label(for="rating") How do you rate the conference (Marko being the best possible score)?   
           select(id="rating", name="rating")
             option(value="1") 1
             option(value="2") 2
@@ -55,6 +105,6 @@ block content
             option(value="7") 7
             option(value="8") 8
             option(value="9") 9
-            option(value="10") 10
+            option(value="10") Marko
         button.btn.btn-default(type="submit") Submit
 
