@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var Review = require('./models/conference_review');
 var routes = require('./routes/index');
 var reviews = require('./routes/reviews');
+var conferences = require('./routes/conferences')
 
 var app = express();
 var mongoose = require('mongoose');
@@ -31,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/review', reviews);
+app.use('/conference', conferences);
+
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

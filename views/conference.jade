@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h2.text-center #{conferenceName} 
+  p.text-center Average Rating: #{averageRating}
+  br
+  br
+  br
+  for review in reviews
+    p #{review.conference_attendee} rated this conference as #{review.conference_rating} out of 10.
