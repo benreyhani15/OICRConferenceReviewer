@@ -5,7 +5,7 @@ block content
     .header
       h3(style="color: rgb(57, 121, 59);") New Conference Review
       br
-     .form-body
+     .container
       form(name="addReview", method="post", action="/review/addReview")
         .form-group
           table(style="width:100%")
@@ -94,7 +94,7 @@ block content
                 textarea(name="collaborators",rows="4", cols="80",id="contacts",placeholder="Please note any client contacts made at the event here")
 
         .form-group
-          label(for="rating") How do you rate the conference (Marko being the best possible score)?   
+          label(for="rating") How do you rate the conference (Marko being the best possible score)?
           select(id="rating", name="rating")
             option(value="1") 1
             option(value="2") 2

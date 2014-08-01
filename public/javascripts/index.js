@@ -14,7 +14,7 @@ $(document).ready(function(){
    	console.log(url);
      $.getJSON(url, function(conferences){
      	conferences.forEach(function(conference){
-     		var tmpElement = '<a href="conference/'+conference+'"> <h5>'+conference+'</h5> </a>';
+     		var tmpElement = '<a href="conference/'+conference+'"> <h5 class="hyperlinks">'+conference+'</h5> </a>';
      		htmlElementsArray.push(tmpElement);
      	});
      	$('.col-xs-9').empty().append(htmlElementsArray);

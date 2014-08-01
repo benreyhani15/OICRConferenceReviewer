@@ -2,7 +2,7 @@ html,body {
   height: 100%;
 }
 
-h5{
+h5.hyperlinks{
 	color: green;
 }
 body {
@@ -16,4 +16,8 @@ a {
 
 .centerDiv {
 	text-align: center;
+}
+
+label.radio-inline{
+	padding-right: 5px;
 }
