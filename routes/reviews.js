@@ -2,10 +2,22 @@ var express = require('express');
 var router = express.Router();
 var Review = require('../models/conference_review');
 var reviewLandpageURL = 'http://localhost:3000/';
-
  /* GET new review page. */
 router.get('/new', function(req, res) {
   res.render('new_review');
+});
+
+
+router.get('/',function(req,res){
+	Review.find(function(err,reviews){
+		res.send(reviews);
+	});
+});
+
+router.get('/deleteDB',function(req,res){
+	Review.remove(function(err){
+		res.send('deletd db');
+	});
 });
 
 router.post('/addReview', function(req,res){
