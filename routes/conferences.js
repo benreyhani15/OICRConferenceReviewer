@@ -17,7 +17,7 @@ router.get('/:name', function(req, res){
 		console.log(totalRating);
 		console.log(numOfEntries);
 		console.log(totalRating/numOfEntries);
-		res.render('conference', {reviews: reviewData, conferenceName: req.params.name, averageRating: totalRating/numOfEntries});
+		res.render('conference', {reviews: reviewData, conferenceName: req.params.name, averageRating: Math.round(totalRating*100/numOfEntries)/100});
 	});
 });
 

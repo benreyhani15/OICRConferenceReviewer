@@ -1,10 +1,47 @@
 extends layout
 
 block content
-  h2.text-center #{conferenceName} 
-  p.text-center Average Rating: #{averageRating}
+  h1.text-center(style="color: rgb(57, 121, 59);") #{conferenceName} 
+  p.text-center Average Rating: 
+    b #{averageRating}
   br
   br
   br
-  for review in reviews
-    p #{review.conference_attendee} rated this conference as #{review.conference_rating} out of 10.
+  h2.text-center(style="text-decoration:underline") Reviews
+  br
+  br
+  table(width="100%")
+    - var counter = 0
+    while counter < reviews.length
+      - console.log(counter)
+      - console.log(reviews[counter])
+      tr(width="90%")
+        td(width="45%")
+          p.text-center
+            b #{reviews[counter].conference_attendee} (#{reviews[counter].conference_attendee_department}) rated this conference as #{reviews[counter].conference_rating} out of 10.
+          p.text-center They attended this conference in #{reviews[counter].conference_year} in #{reviews[counter].conference_city} for #{reviews[counter].conference_duration} days
+          p.text-center The conference focused on #{reviews[counter].area_of_focus}
+          -var wouldRecommend = ""
+          -if(!reviews[counter].is_recommended)
+            -wouldRecommend = " not ";
+          p.text-center They would #{wouldRecommend} recommend this conference to their colleagues
+          p.text-center The reason(s) for that is(are): #{reviews[counter].recommended_reason}
+          p.text-center Here is their summary of the conference: #{reviews[counter].conference_summary}
+          br
+        if(counter + 1 <  reviews.length)
+          td(width="45%")
+            p.text-center
+              b #{reviews[counter + 1].conference_attendee} (#{reviews[counter + 1].conference_attendee_department}) rated this conference as #{reviews[counter + 1].conference_rating} out of 10.
+            p.text-center They attended this conference in #{reviews[counter + 1].conference_year} in #{reviews[counter + 1].conference_city} for #{reviews[counter + 1].conference_duration} days
+            p.text-center The conference focused on #{reviews[counter + 1].area_of_focus}
+            -var wouldRecommend = ""
+            -if(!reviews[counter + 1].is_recommended)
+              -wouldRecommend = " not ";
+            p.text-center They would #{wouldRecommend} recommend this conference to their colleagues
+            p.text-center The reason(s) for that is(are): #{reviews[counter + 1].recommended_reason}
+            p.text-center Here is their summary of the conference: #{reviews[counter + 1].conference_summary}
+            br
+        else 
+          td
+            p 
+      - counter += 2
