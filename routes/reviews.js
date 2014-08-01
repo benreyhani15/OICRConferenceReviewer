@@ -22,7 +22,7 @@ router.get('/deleteDB',function(req,res){
 
 router.post('/addReview', function(req,res){
 	var date = req.body.date;
-	var conferenceMonth = date.substring(date.lastIndexOf("-"),date.length - 1);
+	var conferenceMonth = date.substring(date.lastIndexOf("-"),date.length);
 	var conferenceYear = date.substring(0,date.lastIndexOf("-"));
 	var tmpReview = new Review({
       conference_attendee : req.body.attendee,
